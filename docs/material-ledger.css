@@ -1,0 +1,56 @@
+.material-ledger-head { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:14px; }
+.material-ledger-head h2 { margin:4px 0; font:500 24px Georgia,"Songti SC",serif; }
+.material-ledger-head p { margin:0; color:#75817b; }
+.material-source-card { display:flex; gap:12px; align-items:center; padding:15px; border:1px solid #d9dfda; border-radius:14px; background:#f4f7f4; }
+.material-source-card > span { display:grid; place-items:center; width:42px; height:42px; border-radius:12px; background:#dfeae4; color:#315f51; font-size:20px; }
+.material-source-card h3 { margin:2px 0; font-size:15px; }
+.material-source-card small,.material-source-card p { margin:0; color:#718078; font-size:11px; }
+.material-search { margin:12px 0; padding:14px; border:1px solid #d9dfda; border-radius:14px; background:#fff; }
+.material-search > header { display:flex; justify-content:space-between; gap:12px; align-items:start; }
+.material-search h3 { margin:0 0 3px; font-size:14px; }
+.material-search header p { margin:0; color:#748078; font-size:10px; }
+.material-search header button { border:0; background:transparent; color:#356653; font-size:10px; font-weight:800; }
+.material-search-controls { display:grid; grid-template-columns:minmax(180px,1fr) 190px 210px; gap:8px; margin-top:10px; }
+.material-search-controls > label:first-child,.material-search-target { display:flex; align-items:center; gap:7px; padding:0 10px; border:1px solid #d7ded9; border-radius:10px; background:#fafbf9; }
+.material-search-target span { color:#758079; font-size:9px; white-space:nowrap; }
+.material-search-controls input,.material-search-controls select { width:100%; min-height:38px; border:0; background:transparent; font:inherit; }
+.material-search-controls > select { padding:0 10px; border:1px solid #d7ded9; border-radius:10px; }
+.material-search-results { display:grid; gap:7px; margin-top:9px; }
+.material-search-count,.material-search-empty { margin:2px 0; color:#77837c; font-size:10px; }
+.material-search-results > article { display:grid; grid-template-columns:1fr auto; align-items:stretch; border:1px solid #e0e4e0; border-radius:10px; background:#f8faf7; overflow:hidden; }
+.material-search-open { display:grid; grid-template-columns:minmax(130px,220px) 1fr; align-items:center; gap:12px; padding:10px; border:0; background:transparent; text-align:left; }
+.material-search-open span { display:grid; gap:3px; }
+.material-search-open b { font-size:11px; }
+.material-search-open small { color:#758079; font-size:9px; }
+.material-search-open p { margin:0; color:#4d5751; font-size:10px; line-height:1.6; }
+.material-search-use { min-width:150px; padding:8px 12px; border:0; border-left:1px solid #dce3de; background:#eef5f0; color:#356653; font-size:10px; font-weight:800; }
+.material-search-use:hover { background:#e4f0e8; }
+.material-search mark,#materialPageText mark { padding:0 2px; border-radius:3px; background:#ffe49b; color:inherit; }
+.material-ledger-metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; margin:12px 0; }
+.material-ledger-metrics article { padding:13px; border-radius:12px; background:#f1f3ef; }
+.material-ledger-metrics article.warn { background:#fff0dd; }
+.material-ledger-metrics span { display:block; color:#77837d; font-size:11px; }
+.material-ledger-metrics b { display:block; margin-top:5px; font:600 23px Georgia,serif; }
+.material-ledger-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.material-ledger-grid > div { padding:15px; border:1px solid #dedfd9; border-radius:14px; background:#fff; }
+.material-ledger-grid h3 { margin:0 0 10px; font-size:14px; }
+.material-point-list,.material-page-list { display:grid; gap:7px; }
+.material-point-list button { display:flex; justify-content:space-between; gap:10px; padding:10px; border:1px solid #e0e2dd; border-radius:10px; background:#fafaf7; text-align:left; }
+.material-point-list span { display:grid; gap:3px; }
+.material-point-list small,.material-page-list small { color:#79857f; font-size:10px; }
+.material-point-list em { align-self:center; padding:4px 6px; border-radius:8px; background:#e7efe9; color:#3d6d59; font-size:10px; font-style:normal; }
+.material-point-list button.missing em,.material-point-list button.needs-review em { background:#fff0dc; color:#805d2e; }
+.material-page-list article { display:grid; grid-template-columns:64px 1fr; gap:3px 8px; padding:10px; border-radius:10px; background:#f7f8f5; }
+.material-page-list b { font-size:11px; }
+.material-page-list span { font-size:12px; }
+.material-page-list small { grid-column:2; }
+.material-page-list article.unavailable { opacity:.7; }
+@media(max-width:720px) {
+  .material-ledger-head { display:grid; }
+  .material-search-controls { grid-template-columns:1fr; }
+  .material-search-results > article { grid-template-columns:1fr; }
+  .material-search-open { grid-template-columns:1fr; }
+  .material-search-use { border-left:0; border-top:1px solid #dce3de; }
+  .material-ledger-metrics { grid-template-columns:1fr 1fr; }
+  .material-ledger-grid { grid-template-columns:1fr; }
+}

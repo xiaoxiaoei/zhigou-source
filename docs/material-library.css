@@ -1,0 +1,26 @@
+.material-library-strip { margin: 12px 0; padding: 14px; border: 1px solid #d9dfda; border-radius: 14px; background: #fff; }
+.material-library-strip > header { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 10px; }
+.material-library-strip h3 { margin: 0 0 3px; font-size: 14px; }
+.material-library-strip p { margin: 0; color: #748078; font-size: 10px; }
+.material-library-strip > div { display: grid; grid-template-columns: repeat(auto-fit,minmax(170px,1fr)); gap: 8px; }
+.material-library-strip article { display: grid; gap: 3px; padding: 10px; border-radius: 10px; background: #f5f7f4; }
+.material-library-strip article span { color: #527568; font-size: 9px; font-weight: 800; }
+.material-library-strip article b { font-size: 12px; }
+.material-library-strip article small { color: #7a857f; font-size: 10px; }
+.material-library-strip article > button { justify-self: start; padding: 3px 0; border: 0; background: transparent; color: #356653; font-size: 10px; font-weight: 800; }
+.material-library-strip article.archived { opacity: .58; background: #efefec; }
+.add-material-shell { width: min(760px,calc(100% - 32px)); }
+.material-impact { margin-top: 12px; padding: 12px; border: 1px solid #e2cda9; border-radius: 10px; background: #fff8e9; }
+.material-impact b { font-size: 12px; }
+.material-impact p { margin: 4px 0 0; color: #755f3c; font-size: 11px; line-height: 1.6; }
+.material-revisions { margin-top: 14px; padding-top: 14px; border-top: 1px solid #e0e5e1; }
+.material-revisions header p { margin: 3px 0 10px; color: #748078; font-size: 10px; }
+.material-revisions > div { display: grid; gap: 8px; max-height: 260px; overflow: auto; }
+.material-revisions article { display: flex; justify-content: space-between; align-items: start; gap: 12px; padding: 10px; border-radius: 10px; background: #f5f7f4; }
+.material-revisions article > div { min-width: 0; display: grid; gap: 3px; }
+.material-revisions article b { font-size: 11px; }
+.material-revisions article small { color: #6f7b74; font-size: 9px; line-height: 1.5; }
+.material-revisions article em { color: #4f725f; font-size: 9px; font-style: normal; font-weight: 800; }
+.material-revisions details summary { cursor: pointer; color: #456957; font-size: 9px; font-weight: 700; }
+.material-revisions pre { max-height: 130px; margin: 6px 0 0; padding: 8px; overflow: auto; white-space: pre-wrap; border: 1px solid #dce2de; border-radius: 8px; background: white; color: #3f4843; font: 10px/1.6 ui-monospace,monospace; }
+@media(max-width:640px){.material-library-strip>header{display:grid}.material-library-strip .button{width:100%}}

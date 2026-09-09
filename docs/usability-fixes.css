@@ -1,0 +1,21 @@
+dialog{max-width:calc(100vw - 24px);box-sizing:border-box}
+dialog .dialog-shell,dialog .motion-shell,dialog .code-trace-shell{width:100%;max-width:100%;margin:0;box-sizing:border-box}
+.motion-body,.motion-stage-area,.scene-viewport{min-width:0;box-sizing:border-box}
+.scene-viewport svg{display:block;width:100%!important;height:auto!important;max-width:100%;overflow:hidden}
+.scene-viewport{min-height:0;padding:8px}.motion-stage{min-height:220px}
+.dialog-body label,.dialog-body input,.dialog-body textarea,.dialog-body select{font-size:16px!important;line-height:1.6}
+.dialog-body .optional,.dialog-body small,.dialog-shell footer{font-size:14px}
+.analysis-log{display:flex!important;min-height:140px;max-height:320px;overflow:auto}
+.analysis-log strong,.analysis-log small,.analysis-log time,.analysis-main>p{font-size:14px!important;line-height:1.6}
+.analysis-shell{overflow:auto}.analysis-actions{display:flex;gap:8px;flex-wrap:wrap;padding:12px;grid-column:1/-1}
+.analysis-actions button,.task-status-button{font-size:14px;padding:10px;border:1px solid #abc0b8;border-radius:8px;background:#fff;color:#183a31}
+.activity-list:has(.empty-state){display:block}.activity-list .empty-state{width:100%;grid-column:1/-1}
+.task-status-button{position:fixed;bottom:16px;right:20px;z-index:30}
+.runtime-warning{padding:12px;border:1px solid #d9b278;background:#fff4de;color:#594626;font-size:15px}
+@media(max-width:760px){.analysis-shell{display:flex;flex-direction:column;height:calc(100dvh - 40px)}.analysis-main{padding:20px}.thinking-visual{display:none}.motion-list{max-width:100%;overflow:auto}.motion-shell>header{padding:12px}.motion-shell>header h2{font-size:20px;overflow-wrap:anywhere}.revision-card textarea{width:100%;box-sizing:border-box}}
+#workspaceAgenda>li.muted{display:block;width:100%;box-sizing:border-box}#workspaceAgenda>li.muted>div{width:100%}
+.material-text-review textarea{display:block;width:100%;box-sizing:border-box;white-space:pre-wrap;min-height:150px}.material-text-review details{padding:10px 0}.page-thumbnail{white-space:pre-wrap;overflow:auto}.material-text-review summary{cursor:pointer;font-size:16px}
+.source-tabs button,.unit-tabs button{font-size:14px!important}.source-tabs button{min-height:44px}
+.material-destination{padding:16px;border:1px solid #afc4b8;background:#edf4ef;border-radius:12px;margin-bottom:18px}.material-destination p{font-size:15px;line-height:1.6;margin:8px 0 0}.unit-workflow-actions{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px}.alignment-chain span{white-space:normal!important;text-overflow:clip!important;overflow-wrap:anywhere}
+#analysisRoute{display:none}
+.katex{font-size:1.1em!important}.katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:6px 0}.studio-task-badge{position:fixed;right:24px;bottom:82px;z-index:1200;max-width:min(370px,calc(100vw - 32px));padding:14px 20px;border:1px solid #a5bdaf;border-radius:14px;background:#173f32;color:#fff;box-shadow:0 6px 24px #102a2524;cursor:pointer;text-align:left;font-size:15px}.studio-task-badge[hidden]{display:none}.studio-task-events{max-height:38vh;overflow:auto;white-space:pre-wrap;font-size:15px;line-height:1.7;padding:14px;background:#edf3ef;border-radius:10px}

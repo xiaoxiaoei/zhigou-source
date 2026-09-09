@@ -1,0 +1,27 @@
+.page-selection-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px 2px;max-height:420px!important}
+.page-card{position:relative;border:2px solid #e2e7e4;border-radius:10px;overflow:hidden;background:#f8faf9}
+.page-card:has(input:checked){border-color:#287454;background:#edf7f0}
+.page-card:has(input:focus-visible){outline:3px solid #82adfa;outline-offset:2px}
+.page-card .page-choice{position:relative;display:flex!important;flex-direction:column;padding:8px;gap:8px;border:0;margin:0}
+.page-card .page-choice input{position:absolute;top:12px;left:12px;z-index:1;accent-color:#287454;background:white}
+.page-thumbnail{display:flex;align-items:center;justify-content:center;width:100%;height:150px;background:white;border-radius:5px;color:#6a786f;font-size:13px;overflow:hidden}
+.page-thumbnail img{width:100%;height:100%;object-fit:contain}
+.page-card .page-choice b{font-size:14px;padding-right:50px}
+.page-card>button{position:absolute;right:8px;bottom:6px;border:0;background:transparent;color:#276347;padding:5px 8px;cursor:pointer}
+.page-card>button:disabled{opacity:.4;cursor:default}
+.page-selection-list[data-layout=list]{grid-template-columns:1fr}
+.page-selection-list[data-layout=list] .page-choice{flex-direction:row!important;align-items:center}
+.page-selection-list[data-layout=list] .page-thumbnail{width:180px;flex-shrink:0;height:110px}
+.page-selection-list[data-layout=list] .page-card>button{bottom:42px}
+.page-selection-actions{flex-wrap:wrap}
+.source-pane:has(#pageSelection:not([hidden])) .upload-zone{min-height:0;padding:12px;display:flex;flex-direction:row;align-items:center;gap:12px}
+.source-pane:has(#pageSelection:not([hidden])) .upload-zone>span{display:none}
+.page-selection-actions button[aria-pressed=true]{background:#276347!important;color:white}
+[data-preview-status]{font-size:14px;color:#637369}
+.page-zoom{width:min(94vw,1100px);max-height:92vh;padding:16px;border:1px solid #cad4ce;border-radius:14px;background:#f5f7f5}
+.page-zoom::backdrop{background:#12231dbb}
+.page-zoom header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.page-zoom button{padding:8px 18px;border:1px solid #b8c9bd;border-radius:8px;background:white;font:inherit;cursor:pointer}
+.page-zoom-body{overflow:auto;max-height:78vh;text-align:center}
+.page-zoom canvas{max-width:100%;height:auto;background:white}
+@media(max-width:520px){.page-selection-list{grid-template-columns:1fr}.page-selection-list[data-layout=list] .page-thumbnail{width:130px}}

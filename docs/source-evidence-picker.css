@@ -1,0 +1,14 @@
+.evidence-candidate-picker { padding: 13px; border: 1px solid #d8ddd8; border-radius: 12px; background: #f8f8f4; }
+.evidence-candidate-picker > header { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 9px; }
+.evidence-candidate-picker > header div { display: grid; gap: 2px; }
+.evidence-candidate-picker > header b { font-size: 13px; }
+.evidence-candidate-picker > header small,.evidence-candidate-picker > header em { color: #748078; font-size: 10px; font-style: normal; }
+.evidence-candidate-picker > div { display: grid; gap: 7px; max-height: 250px; overflow: auto; }
+.evidence-candidate-picker button { display: grid; grid-template-columns: 1fr auto; gap: 3px 10px; padding: 10px; border: 1px solid #e0e2dd; border-radius: 9px; background: #fff; text-align: left; }
+.evidence-candidate-picker button > span { color: #718078; font-size: 10px; }
+.evidence-candidate-picker button > q { grid-column: 1; color: #354b43; font-size: 11px; line-height: 1.55; }
+.evidence-candidate-picker button > em { grid-column: 2; grid-row: 1 / 3; align-self: center; color: #356653; font-size: 10px; font-style: normal; font-weight: 800; }
+.evidence-candidate-picker button:disabled { opacity: .6; }
+.evidence-candidate-picker button:hover:not(:disabled) { border-color: #9bb5aa; background: #f7fbf8; }
+@media(max-width:640px){.evidence-candidate-picker>header{display:grid}.evidence-candidate-picker button{grid-template-columns:1fr}.evidence-candidate-picker button>em{grid-column:1;grid-row:auto}}
+.evidence-editor-row .evidence-row-material { grid-column: 1 / -1; color: #527568; font-size: 10px; font-weight: 700; }

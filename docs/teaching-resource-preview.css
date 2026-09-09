@@ -1,0 +1,25 @@
+.teaching-preview-shell { width:min(1080px,calc(100% - 32px)); height:min(820px,calc(100% - 32px)); margin:auto; display:flex; flex-direction:column; overflow:hidden; border-radius:20px; background:#f8f7f2; }
+.teaching-preview-shell > header { display:flex; justify-content:space-between; gap:20px; padding:22px 26px; border-bottom:1px solid #dcded8; background:#fff; }
+.teaching-preview-shell h2 { margin:5px 0; font:500 25px Georgia,"Songti SC",serif; }
+.teaching-preview-shell header p { margin:0; color:#6f7b75; font-size:12px; }
+.teaching-preview-body { flex:1; min-height:0; overflow:auto; padding:22px 26px; }
+.teaching-preview-grid { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr); gap:16px; }
+.teaching-preview-grid > section,.teaching-preview-grid > aside { padding:20px; border:1px solid #dfe2dc; border-radius:16px; background:#fff; }
+.teaching-preview-grid h3 { margin:0 0 12px; font-size:14px; }
+.teaching-preview-grid pre { max-height:520px; overflow:auto; padding:16px; border-radius:12px; background:#192720; color:#e1eee7; font:12px/1.7 ui-monospace,monospace; white-space:pre-wrap; }
+.teaching-preview-grid dl { display:grid; gap:10px; margin:0; }
+.teaching-preview-grid dl div { padding:11px; border-radius:10px; background:#f4f5f1; }
+.teaching-preview-grid dt { color:#8b6857; font-size:9px; font-weight:800; }
+.teaching-preview-grid dd { margin:4px 0 0; color:#48564f; font-size:11px; line-height:1.65; white-space:pre-wrap; }
+.preview-safe-note,.preview-warning { margin:14px 0 0; padding:10px; border-radius:9px; font-size:10px; line-height:1.5; }
+.preview-safe-note { background:#e8f1eb; color:#37624f; }.preview-warning { background:#fff2df; color:#785b34; }
+.preview-lead,.preview-context { margin:0 0 13px; color:#4c5a53; font-size:12px; line-height:1.7; }
+.preview-lab-progress { display:flex; align-items:center; gap:10px; margin-bottom:12px; }.preview-lab-progress > i { flex:1; height:6px; overflow:hidden; border-radius:8px; background:#e6e7e1; }.preview-lab-progress em { display:block; width:0; height:100%; background:#5d8b75; transition:.2s; }.preview-lab-progress span { color:#6d7771; font-size:9px; }
+.preview-lab-steps { display:grid; gap:8px; margin:0; padding:0; list-style:none; }
+.preview-lab-steps button { width:100%; display:flex; gap:10px; padding:11px; border:1px solid #e2e3de; border-radius:10px; background:#fafaf7; text-align:left; }.preview-lab-steps button[aria-pressed="true"] { border-color:#a9c5b4; background:#edf5ef; }.preview-lab-steps button span { display:grid; gap:3px; font-size:11px; }.preview-lab-steps button b { color:#557365; font-size:9px; }
+.teaching-preview-grid table { width:100%; border-collapse:collapse; font-size:10px; }.teaching-preview-grid th,.teaching-preview-grid td { padding:8px; border:1px solid #e0e2dc; text-align:left; vertical-align:top; }.teaching-preview-grid th { background:#f3f4ef; }
+.preview-scenario { padding:16px; border-left:4px solid #d7aa87; background:#f7f1eb; color:#3f4b45; font-size:12px; line-height:1.8; white-space:pre-wrap; }
+.preview-case-questions { display:grid; gap:8px; margin:0; padding-left:28px; }.preview-case-questions li { padding:11px; border-radius:10px; background:#f4f5f1; font-size:11px; line-height:1.6; }.preview-case-questions li::marker { color:#3f6756; font-weight:800; }
+.preview-reveal-notes { width:100%; margin-top:13px; padding:10px; border:1px solid #cfd8d2; border-radius:9px; background:#fff; color:#3e6655; font-size:10px; font-weight:800; }.preview-teaching-notes { margin-top:9px; padding:13px; border-radius:9px; background:#fff6e8; color:#5d4d39; font-size:11px; line-height:1.7; white-space:pre-wrap; }
+.teaching-preview-shell > footer { display:flex; justify-content:space-between; align-items:center; gap:14px; padding:15px 24px; border-top:1px solid #dcded8; background:#fff; }.teaching-preview-shell > footer > span { color:#708078; font-size:10px; }.teaching-preview-shell > footer > div { display:flex; gap:8px; }
+@media(max-width:760px){.teaching-preview-shell{width:100%;height:100%;border-radius:0}.teaching-preview-grid{grid-template-columns:1fr}.teaching-preview-body{padding:16px}.teaching-preview-shell>footer{align-items:flex-start;flex-direction:column}.teaching-preview-shell>footer>div{width:100%}.teaching-preview-shell>footer .button{flex:1}}
