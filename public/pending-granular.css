@@ -1,0 +1,50 @@
+.pending-diff-items.granular {
+  display: grid;
+  gap: 6px;
+}
+
+.pending-item-choice {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 8px !important;
+  padding: 7px 8px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.pending-item-choice.added {
+  border-color: #cce4d6;
+  background: #f0f8f3;
+}
+
+.pending-item-choice.changed {
+  border-color: #ead8b8;
+  background: #fff8ec;
+}
+
+.pending-item-choice input {
+  width: 15px !important;
+  margin: 1px 0 0;
+  accent-color: #315f51;
+}
+
+.pending-item-choice span {
+  padding: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-size: 11px !important;
+  line-height: 1.4;
+}
+
+.pending-item-static {
+  display: block;
+  padding: 6px 8px !important;
+  font-size: 11px !important;
+  line-height: 1.4;
+}
+
+.pending-item-static.missing {
+  border: 1px dashed #e2cbc5;
+  background: #fbf3f1 !important;
+}

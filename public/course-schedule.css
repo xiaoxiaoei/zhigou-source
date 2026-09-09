@@ -1,0 +1,9 @@
+.course-schedule-panel > header > span { color: #728079; font-size: 11px; }
+.course-schedule-list { display: grid; gap: 7px; }
+.course-schedule-list article { display: grid; grid-template-columns: 34px minmax(0, 1fr) 110px 160px; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; background: #f7f8f4; }
+.course-schedule-list article > span { color: #527064; font: 600 11px Georgia, serif; }
+.course-schedule-list h3 { margin: 0 0 3px; font-size: 13px; }
+.course-schedule-list small { color: #7b8781; font-size: 10px; }
+.course-schedule-list label { display: grid; gap: 4px; color: #75817b; font-size: 10px; }
+.course-schedule-list input { width: 100%; min-height: 34px; padding: 6px 8px; border: 1px solid #d8dcd6; border-radius: 8px; background: #fff; color: #263c35; font: inherit; }
+@media (max-width: 760px) { .course-schedule-list article { grid-template-columns: 30px 1fr 90px; } .course-schedule-list label:last-child { grid-column: 2 / 4; } }

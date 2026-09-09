@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {normalizeTask,fitLessonDuration} from '../src/lesson-constraints.mjs';
+import {validateSettings,publicSettings} from '../src/model-settings.mjs';
+import {applySceneProgress} from '../public/scene-runtime.js';
+import {autoArrangeTimeline} from '../public/classroom-timeline.js';
+import {safeSvg} from '../public/safe-svg.js';
+import {buildTeachingPackageHtml} from '../public/unit-export.js';
+import {freeformSceneQualityIssues} from '../src/freeform-scene.mjs';
+import {selectDeckPages} from '../src/page-selection.mjs';
+
+test('OCR can select empty scanned pages, normal analysis cannot',()=>{const deck={slideCount:1,slides:[{number:1,text:''}]};assert.equal(selectDeckPages(deck,'1',{allowEmpty:true}).slideCount,1);assert.throws(()=>selectDeckPages(deck,'1'),/OCR/);});
+test('bad generated stages fail before being labelled usable',()=>{const issues=freeformSceneQualityIssues({phases:[{},{},{},{}],svgMarkup:'<svg><g class="phase-group" data-phase-index="0" id="x"/><g id="x"/><animate attributeName="display"/></svg>'});assert.ok(issues.some(s=>s.includes('重复id')));assert.ok(issues.some(s=>s.includes('缺少某个声明阶段')));assert.ok(issues.some(s=>s.includes('display')));});
+
+test('short lesson constraints preserve 15 minutes and cap concept motion count',()=>{const task=normalizeTask({duration:'90 分钟'},'只准备15分钟','concept');assert.equal(task.duration,15);assert.equal(task.maxMotions,1);assert.equal(task.maxPoints,3);assert.equal(normalizeTask({duration:45,deliverables:'questions'}).maxMotions,0);});
+test('duration correction is exact and does not discard activity text',()=>{const plan={flow:[{minutes:10,teacherAction:'a'},{minutes:35,teacherAction:'b'},{minutes:45,teacherAction:'c'}]};for(const n of [5,15,45,90]){const result=fitLessonDuration(plan,n);assert.equal(result.flow.reduce((a,b)=>a+b.minutes,0),n);assert.deepEqual(result.flow.map(p=>p.teacherAction),['a','b','c']);}assert.equal(plan.flow[0].minutes,10);});
+test('settings never return API key, enforce endpoint protocol and numeric limits',()=>{const env={LLM_API_KEY:'test-only-secret',LLM_BASE_URL:'https://example.com/v1'};assert.equal(publicSettings(env).hasKey,true);assert.doesNotMatch(JSON.stringify(publicSettings(env)),/test-only-secret/);for(const baseUrl of ['file:///etc/passwd','https://user:pass@example.com','https://example.com?key=x'])assert.throws(()=>validateSettings({baseUrl},env));assert.throws(()=>validateSettings({concurrency:99},env));assert.equal(validateSettings({baseUrl:'http://localhost:11434',protocol:'ollama'},{}).LLM_API_KEY,'ollama');});
+test('runtime reveals exclusive generated phases and seeks CSS/SMIL timeline',()=>{const groups=[0,1,2].map(i=>({dataset:{phaseIndex:String(i)},classList:{contains:k=>k==='phase-group',toggle(){}},style:{setProperty(k,v){this[k]=v;}}}));let seek;const svg={style:{},setAttribute(){},querySelectorAll:()=>groups,pauseAnimations(){},setCurrentTime:t=>seek=t,getAnimations:()=>[]};const container={querySelector:()=>svg};applySceneProgress(container,{renderer:'ai-svg',totalDurationMs:9000,phases:[{at:0},{at:.5},{at:.8}]},.5);assert.deepEqual(groups.map(g=>g.style.display),['none','inline','none']);assert.equal(seek,4.5);});
+test('timeline does not cram a 35 minute experiment into a 10 minute close',()=>{const unit={lesson:{flow:[{phase:'总结',minutes:10,keyPointIds:['a']}]},resources:[{type:'lab',title:'实验',keyPointIds:['a'],details:{estimatedMinutes:35}}]};assert.equal(autoArrangeTimeline(unit),0);assert.equal(unit.resources[0].activityRefs,undefined);});
+test('SVG rejects scripts and external assets at display and export boundaries',()=>{assert.equal(safeSvg('<svg><script>alert(1)</script></svg>'),'');assert.equal(safeSvg('<svg><image href="https://bad/a"/></svg>'),'');assert.equal(safeSvg('<svg><rect width="5" height="5"/></svg>'),'<svg><rect width="5" height="5"/></svg>');});
+test('classroom package embeds sandboxed playable SVG and no API configuration',()=>{const output=buildTeachingPackageHtml({title:'导出测试',animations:[{title:'动效',scene:{svgMarkup:'<svg xmlns="http://www.w3.org/2000/svg"><circle r="10"/></svg>',phases:[]}}]});assert.match(output,/sandbox="allow-scripts"/);assert.match(output,/播放\/暂停/);assert.doesNotMatch(output,/LLM_API_KEY|localStorage/);});

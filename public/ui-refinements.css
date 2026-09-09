@@ -1,0 +1,37 @@
+
+/* Keep long unit titles and actions in separate rows. */
+.unit-header{display:grid;grid-template-columns:42px minmax(0,1fr);gap:16px;align-items:start}.unit-header>div:nth-child(2){min-width:0;margin:0}.unit-header h1{overflow-wrap:anywhere}.unit-header-actions{grid-column:2;justify-content:flex-start;min-width:0;flex-wrap:wrap}.focus-unit-content{width:100%;padding:24px;border:1px solid #ffffff30;border-radius:18px;background:#ffffff08;color:#f5f4eb}.focus-unit-content h3{font-size:18px;margin:0 0 18px}#focusContentCounts{display:grid;grid-template-columns:1fr 1fr;gap:18px}#focusContentCounts div{display:grid;gap:6px}#focusContentCounts span{font-size:15px;color:#c6d5ce}#focusContentCounts b{font-size:28px;font-weight:600}@media(max-width:700px){.unit-header-actions{grid-column:1/-1}.unit-header{grid-template-columns:36px minmax(0,1fr)}}
+/* Readability and interaction cleanup for the teaching workstation. */
+body{font-size:16px}
+body p{font-size:14px!important;line-height:1.7!important}
+body small{font-size:12px!important;line-height:1.5!important}
+body button,body input,body textarea,body select{font-size:14px}
+.nav-item,.course-shortcut,.unit-tabs button,.filter-pills button{font-size:14px!important}
+.start-card b,.unit-row b,.resource-card h3,.asset-card h3,.knowledge-card h3,.question-card h3{font-size:15px!important}
+.start-card small,.unit-row small,.resource-card p,.asset-card p,.knowledge-card p,.knowledge-details span,.lesson-flow p,.question-card p{font-size:13px!important}
+.objective-list li,.after-class-list li,.resource-intro p,.unit-summary p{font-size:14px!important}
+.section-heading h2{font-size:24px}
+.section-kicker{display:none!important}
+.welcome-row>div:first-child>p,.topbar-actions>.icon-button{display:none!important}
+.welcome-row h1{margin-top:5px;font-size:34px}
+.date-line{font-size:13px}
+.model-pill{font-size:13px!important}
+.button,.primary-small{min-height:40px;font-size:14px!important}
+.dialog-shell>footer{justify-content:flex-end}
+.resource-card footer button,.text-button{font-size:13px!important}
+.course-shortcut{min-height:48px}
+.course-card,.asset-type-grid article{cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s}
+.course-card:hover,.course-card:focus-visible,.asset-type-grid article:hover,.asset-type-grid article:focus-visible,.asset-type-grid article.active{border-color:#789b8e;box-shadow:0 12px 28px rgba(31,47,40,.09);outline:none;transform:translateY(-2px)}
+.filter-pills button{min-height:38px}
+.unit-tabs button{min-height:46px}
+.icon-button,.back-button,.dialog-close,.playback>button{min-width:40px;min-height:40px}
+.inert-note{margin:14px 0 0;color:#738079;font-size:13px}
+.empty-panel{grid-column:1/-1;text-align:center;color:#738079;padding:36px 24px}
+.empty-panel h2{margin:0 0 8px;color:#34483f;font-size:19px}
+.empty-panel p{margin:0}
+.empty-inline{display:block!important;color:#738079!important}
+.sidebar-empty{margin:4px 10px;color:#78968b;font-size:12px;line-height:1.6}.course-edit{margin-top:15px;padding:7px 0;border:0;background:none;color:#356456;font-size:13px!important;font-weight:750}.course-form{width:min(680px,calc(100% - 32px))}.unit-editor-form{width:min(780px,calc(100% - 32px))}.sidebar-label button{display:grid!important;place-items:center;width:30px;height:30px;border-radius:8px}.course-card:focus-visible{outline:3px solid rgba(73,124,108,.24);outline-offset:2px}.unit-header-actions{flex-wrap:wrap;justify-content:flex-end}
+.structured-editor>footer>span.has-warning{color:#9a5f42!important;font-weight:750}
+.version-restore{margin-top:12px;padding:8px 11px;border:1px solid #bac9c2;border-radius:9px;background:#eef3ef;color:#315e50;font-size:12px;font-weight:750}.version-snapshot-ready,.version-snapshot-missing{display:block;margin-top:10px;color:#638075;font-size:11px!important}.version-snapshot-missing{color:#9a8174}
+.restore-version-shell{width:min(560px,calc(100% - 32px))}.restore-version-target{display:flex;align-items:center;gap:15px;padding:18px;border:1px solid #d8e1dc;border-radius:14px;background:#f7f9f7}.restore-version-target>span{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:#e2ece6;color:#356456;font-size:23px}.restore-version-target div{display:grid;gap:3px}.restore-version-target b{font-size:16px;color:#293b34}.restore-version-target time{font-size:12px;color:#718078}.restore-version-note{display:flex;align-items:flex-start;gap:8px;margin:16px 2px 0!important;color:#65756d}.restore-version-note i{margin-top:4px;color:#4e7769}
+@media(max-width:760px){.welcome-row h1{font-size:30px}.start-card{min-height:86px}.view-host{padding:26px 18px}.focus-copy{padding:30px 24px}}

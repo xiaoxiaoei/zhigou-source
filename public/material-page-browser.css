@@ -1,0 +1,16 @@
+.material-page-list button { display: grid; grid-template-columns: 64px 1fr 18px; gap: 3px 8px; padding: 10px; border: 1px solid transparent; border-radius: 10px; background: #f7f8f5; text-align: left; }
+.material-page-list button:hover { border-color: #9bb5aa; background: #f2f7f3; }
+.material-page-list button b { font-size: 11px; }
+.material-page-list button span { font-size: 12px; }
+.material-page-list button small { grid-column: 2; color: #79857f; font-size: 10px; }
+.material-page-list button i { grid-column: 3; grid-row: 1 / 3; align-self: center; color: #527568; }
+.material-page-shell { width: min(900px,calc(100% - 32px)); }
+.material-page-body { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(250px,.7fr); gap: 14px; padding: 20px 26px 26px; overflow: auto; }
+.material-page-body pre { max-height: 500px; margin: 0; padding: 18px; overflow: auto; border: 1px solid #d7ded9; border-radius: 14px; background: #f7f8f5; color: #334b42; font: 12px/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif; white-space: pre-wrap; }
+.material-page-body section { align-self: start; padding: 16px; border: 1px solid #dddcd5; border-radius: 14px; background: #fff; }
+.material-page-body h3 { margin: 0 0 6px; font-size: 15px; }
+.material-page-body p { margin: 0 0 14px; color: #738078; font-size: 11px; line-height: 1.6; }
+.material-page-body label { display: grid; gap: 5px; margin-bottom: 10px; color: #69776f; font-size: 11px; }
+.material-page-body select { width: 100%; padding: 9px; border: 1px solid #d6dcd7; border-radius: 9px; background: #fff; }
+.material-page-body .button { width: 100%; }
+@media(max-width:720px){.material-page-body{grid-template-columns:1fr;padding:16px}.material-page-body pre{max-height:330px}}

@@ -1,0 +1,27 @@
+/* Full lesson content is never a card summary. Keep long text reachable. */
+html body dialog :is(p, dd, li, h2, h3, label, td, th) { overflow-wrap:anywhere; }
+html body dialog :is(.dialog-shell, .resource-editor, .teaching-preview-shell, .diagnostic-runner-shell) {
+  display:flex; flex-direction:column; max-height:calc(100dvh - 32px); margin:16px auto;
+}
+html body dialog :is(.dialog-shell, .resource-editor, .teaching-preview-shell, .diagnostic-runner-shell) > :is(header, footer) { flex-shrink:0; }
+html body dialog :is(.dialog-body, .resource-editor-body, .teaching-preview-body, .diagnostic-runner-body) {
+  flex:1 1 auto; min-height:0; overflow-y:auto; overscroll-behavior:contain; scrollbar-gutter:stable; padding-bottom:28px;
+}
+html body :is(.diagnostic-reveal, .preview-lead, .preview-context, .preview-scenario, .preview-case-questions li, .teaching-preview-grid dd, .preview-teaching-notes, .resource-editor-preview p) {
+  font-size:16px; line-height:1.8; white-space:pre-wrap; overflow-wrap:anywhere; max-height:none; -webkit-line-clamp:unset;
+}
+html body .diagnostic-question-stage h3 { white-space:pre-wrap; overflow-wrap:anywhere; max-height:none; -webkit-line-clamp:unset; font-size:24px; line-height:1.65; }
+html body :is(.diagnostic-reveal-actions button, .diagnostic-observation label, .diagnostic-observation textarea, .diagnostic-result-options b, .resource-editor-body label, .resource-editor-body input, .resource-editor-body textarea, .resource-editor-body select, .resource-detail-grid label, .resource-detail-grid textarea, .resource-detail-grid input, .resource-detail-grid select, .preview-lab-steps button span, .teaching-preview-grid table) { font-size:16px; line-height:1.6; }
+html body :is(.diagnostic-progress, .diagnostic-result-options small, .diagnostic-observation > p, .diagnostic-runner-shell header p, .diagnostic-runner-shell > footer > span, .teaching-preview-shell header p, .teaching-preview-grid dt, .preview-safe-note, .preview-warning) { font-size:14px; line-height:1.6; }
+html body .diagnostic-reveal-actions { flex-wrap:wrap; }
+html body .teaching-preview-grid { grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); }
+html body .teaching-preview-grid > * { min-width:0; }
+html body .teaching-preview-grid pre { font-size:15px; overflow-wrap:anywhere; }
+html body .preview-lab-steps button { min-width:0; overflow-wrap:anywhere; }
+html body .resource-editor-body textarea { min-height:120px; }
+html body .legacy-content-warning { padding:12px 16px; margin:12px 0; background:#fff2df; color:#714b21; border-radius:10px; font-size:16px; line-height:1.7; }
+@media(max-width:760px) {
+  html body .teaching-preview-grid { grid-template-columns:1fr; }
+  html body dialog :is(.dialog-shell, .resource-editor, .teaching-preview-shell, .diagnostic-runner-shell) { max-height:calc(100dvh - 16px); margin:8px auto; }
+  html body .diagnostic-question-stage h3 { font-size:21px; }
+}
